@@ -323,6 +323,7 @@ body{
   /*SOBRE MI*/
   .About span{
     color: var(--primary);
+    justify-content: center;
   }
 
   .About p{
