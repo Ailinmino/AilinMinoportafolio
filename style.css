@@ -1,0 +1,463 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*PALETA DE COLORES*/
+:root{
+    --primary:brown;
+    --secondary:white;
+    --secondary-light:rgb(173, 173, 173);
+    --dark1:#222222;
+    --dark2:#050505;
+    
+}
+
+header{
+    background-color: var(--dark1);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    padding: 10px 0;
+}
+
+body{
+    /*FUENTE DE TEXTO*/
+    font-size: 18px;
+    font-family: 'Newsreader', sans-serif;
+    color: var(--secondary);
+
+    /*COLOR POR DEFECTO*/
+    background-color: var(--dark1);
+
+}
+
+/*BARRA SUPERIOR - MENU*/
+.navbar{
+    display: flex;/*Organizador*/
+    justify-content: flex-end; /*alineacion derecha*/
+    position: sticky;
+    top: 0;
+    z-index: 40;
+
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;/*elimina la lista del menu*/
+   
+
+}
+
+.navbar a{
+    font-size: 20px; /*cambio tamaño de letra del menu*/
+    padding: 15px; /*separacion items menu*/
+    text-decoration: none;/*saca subrayado*/
+    color: brown;
+    
+}
+
+/*INICIO*/
+.hero{
+    background-color: var(--dark1);
+    position: relative;/*posicionamos la imagen para encuadrar los otros elementos*/
+}
+
+.hero img {
+    width: 100%;/*% de tamaño que ocupa en la pantalla*/
+    height: 500px;/*alto de imagen*/
+    opacity: 0.5;/*opacidad de la img*/
+
+}
+
+/*circle profile*/
+.profile div{
+    position: absolute;/*posiciona los div dentro de la imagen*/
+}
+
+.profile{/*conjunto de elemtos del perfil*/
+    display: flex;
+    justify-content: center;
+
+}
+
+.square{ /*posiciona el cuadrado contenedor*/
+    width: 320px;
+    height: 450px;
+    background-color: var(--dark1);
+    opacity: 0.7;
+    z-index: 10;
+    top: 70px;
+
+}
+
+.circle-trans{/*circulo perfil*/
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    border: solid 30px var(--primary);
+    opacity: .5;
+    z-index: 19;
+    top: 90px;
+
+}
+
+.circle{/*circulo perfil*/
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    border: solid 15px var(--primary);
+    z-index: 21;
+    top: 120px;
+
+}
+
+.profile-img img{/*imagen propiamente dicha*/
+    width: 202px;
+    height: 202px;
+    border-radius: 50%;
+
+}
+
+.profile-img{
+    top: 134px;
+    z-index: 20;
+
+}
+
+.square-text-1{ /*nombre*/
+    font-size: 35px;
+    color: var(--secondary);
+    top: 390px;
+    z-index: 11;
+
+}
+
+.square-text-2{/*que hago*/
+    font-size: 17px;
+    color: var(--secondary);
+    top: 430px;
+    z-index: 11;
+    
+}
+
+/*INICIO*/
+.square-text-3{/*sobre mi*/
+    font-size: 17px;
+    color: var(--secondary);
+    top: 490px;
+    z-index: 11;
+}
+
+.square-text-3 a{
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.contact-icon{
+    top: 450px;
+    z-index: 11;
+
+}
+
+.contact-icon img{
+    width: 40px; /*tamaño de icono*/
+    margin: 0 10px; /*espacio entre iconos*/
+}
+
+/*MOVIMIENTO DE LOS ICONOS*/
+.contact-icon img:hover{ 
+    transform: scale(1.3);
+
+}
+.navbar a:hover{
+    border-bottom: var(--primary) solid;
+    color:aliceblue;
+}
+
+.square-text-3:hover{
+    border-bottom: var(--primary) solid;
+    span{
+        color: var(--primary);
+    }
+}
+
+.briefcase-grid img:hover{
+    transform: scale(1.1);
+}
+
+/*PORTAFOLIO*/
+.briefcase-section span{
+    color: var(--primary);
+  }
+
+.briefcase-section h2{
+    padding: 40px;
+    text-align: center;
+}
+
+.briefcase-grid{
+    grid-template-columns: repeat(auto-fit, minmax(290px,auto));/*ajusta lam cant de imagenes al ancho de pantalla*/
+    gap: 15px; /*le dejo el margen para cuando agregue mas proyectos*/
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.briefcase-grid img{
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.02s ease;/*para que se mueva lento al poner el cursor */
+}
+
+.briefcase-grid h3{
+    font-size: 20px;
+    color: var(--secondary);
+    text-align: center;
+    
+}
+
+.briefcase-grid p{
+    font-size: 20px;
+    color: var(--secondary);
+    text-align: center;
+}
+
+/*LENGUAJES*/
+.Lenguajes span{
+    color: var(--primary);
+  }
+
+.Lenguajes {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  .Lenguajes h2 {
+    padding: 40px;
+    text-align: center;
+  }
+  
+  
+  .portfolio-languages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+  }
+  
+  /*iconos*/
+  .language-icon {
+    position: relative;
+    display: inline-block;
+  }
+  
+  
+  .language-icon:hover::after {
+    opacity: 1;
+  }
+  
+  .language-icon img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .language-icon img:hover {
+    transform: scale(1.3); /* Agranda el icono al pasar el mouse */
+  }
+  
+
+  /*HERRAMIENTAS*/
+  .Herramientas span{
+    color: var(--primary);
+  }
+
+  .Herramientas {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  .Herramientas h2 {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .portfolio-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  .tools-icon {
+    position: relative;
+    display: inline-block;
+  }
+  
+  
+  .tools-icon:hover::after {
+    opacity: 1;
+  }
+  
+  .tools-icon img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .tools-icon img:hover {
+    transform: scale(1.3); /* Agranda el icono al pasar el mouse */
+  }
+
+  /*SOBRE MI*/
+  .About span{
+    color: var(--primary);
+  }
+
+  .About p{
+    font-size: 1.5 rem;
+    width: 50%;
+    margin: 0 auto;
+    line-height: 2.5 rem;
+  }
+
+
+  /*CONTACTO*/
+ .Contacto span{
+    color: var(--primary);
+  }
+
+  .contact-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    gap: 40px;
+  }
+  
+  .saber-mas {
+    color: white;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-align: left;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+  
+  .social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+    border-left: 2px solid white;
+  }
+  
+  .social img {
+    width: 100px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social img:hover {
+    transform: scale(1.3);
+  }
+
+  /*FORMULARIO*/
+/*modal oculto*/
+.eins-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .eins-modal-content {
+    position: relative;
+    background: var(--dark1);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+  }
+  
+  .eins-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    color: var(--primary);
+    cursor: pointer;
+    z-index: 1001;
+    transition: transform 0.2s ease;
+    font-weight: bold;
+  }
+  
+  .eins-modal-close:hover {
+    transform: scale(1.2);
+   }
+
+  /*formulario*/
+
+  form {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.form>label>input {
+    background-color: var(--dark1);
+    border-radius: 10px;
+    padding: 10px 60px;
+    color: var(--secondary);
+    outline:none;
+    opacity: .7;
+    width: 100%;
+}
+.form>label>textarea {
+    background-color: var(--dark1);
+    border-radius: 10px;
+    padding: 50px;
+    color: var(--secondary);
+    outline: none;
+    opacity: .7;
+    width: 100%;
+}
+label {
+    padding: 5px;
+    color: var(--primary);
+}
+.form>button {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Newsreader', sans-serif;
+
+}
+
+
+  /*FOOTER*/
+  .footer {
+    text-align: center;
+  }
