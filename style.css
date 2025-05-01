@@ -327,6 +327,7 @@ body{
   .About h2{
     text-align: center;
     margin: 2rem;
+    margin-top: 2rem;
   }
 
   .About p{
